@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: moskovskiy-dvizh-bot
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CHANNEL_ID
+        value: "@moscow_dvizh_rus"
+      - key: ADMIN_USER_ID
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: CRON_SECRET
+        sync: false
+      - key: WEBHOOK_SECRET
+        sync: false
+      - key: TIMEZONE
+        value: "Europe/Moscow"
+      - key: OPENAI_MODEL
+        value: "gpt-4.1-mini"
